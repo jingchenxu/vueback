@@ -33,6 +33,7 @@
 <script src="views/Foo.js"></script>
 <script src="views/Bar.js"></script>
 <script src="views/Radio.js"></script>
+<script src="views/ListPage.js"></script>
 <script>
     // 组件应该先注册方能使用,同时创建与注册组件
 	Vue.component('todo-item', {
@@ -52,7 +53,8 @@
     var routes = [
         { path: '/foo', component: Foo},
         { path: '/bar', component: Bar},
-	    { path: '/radio', component: Radio}
+	    { path: '/radio', component: Radio},
+	    { path: '/listpage', component: ListPage}
     ];
 
     var router = new VueRouter({
