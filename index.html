@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue demo</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
+    <link href="css/style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="app">
+    <div class="leftMenu">
+        <my-menu v-bind:menu="menu" v-for="menu in menuList"></my-menu>
+    </div>
+    <div class="rightContent">
+        <my-navigator v-bind:user="user"></my-navigator>
+        <my-tabbar></my-tabbar>
+        <div class="main">
+            <router-view></router-view>
+        </div>
+    </div>
+</div>
+</body>
+<!--<script src="js/vue.min.js"></script>-->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="components/demo.js"></script>
+<script src="components/MyComponent.js"></script>
+<script src="components/Navigator.js"></script>
+<script src="components/TabBar.js"></script>
+<script src="components/Menu.js"></script>
+<script src="views/Foo.js"></script>
+<script src="views/Bar.js"></script>
+<script src="views/Radio.js"></script>
+<script>
+    // 组件应该先注册方能使用,同时创建与注册组件
+	Vue.component('todo-item', {
+		props: ['todo'],
+		template: '<li>{{todo.text}}</li>'
+	});
+
+	Vue.component('vuedemo', {
+		template: '<div>show message</div>'
+    });
+    //注册组件
+	Vue.component('my-component', MyComponent);
+    Vue.component('my-navigator', Navigator);
+    Vue.component('my-tabbar', TabBar);
+    Vue.component('my-menu', Menu);
+    //下面的是页面相关
+    var routes = [
+        { path: '/foo', component: Foo},
+        { path: '/bar', component: Bar},
+	    { path: '/radio', component: Radio}
+    ];
+
+    var router = new VueRouter({
+        routes: routes
+    });
+
+    var app = new Vue({
+        el: '#app',
+        router: router,
+        data: {
+        	message: 'Hello Vue!',
+            groceryList: [
+                {id: 0, text: '蔬菜'},
+	            {id: 1, text: '奶酪'},
+	            {id: 2, text: '随便'}
+            ],
+            user: {
+        		username: 'jingchenxu',
+                age: 26
+            },
+            menuList: [
+                {id: '01', text: '第一个菜单'},
+	            {id: '02', text: '第二个菜单'},
+	            {id: '03', text: '第三个菜单'},
+	            {id: '04', text: '第四个菜单'},
+	            {id: '05', text: '第五个菜单'}
+            ]
+        }
+    });
+
+    console.dir(app);
+</script>
+</html>
