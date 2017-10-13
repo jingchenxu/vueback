@@ -21,25 +21,37 @@
 </div>
 </body>
 <!--<script src="js/vue.min.js"></script>-->
+<!--外部引入框架js-->
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/vuex"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 <script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
 <script src="js/jquery-3.2.1.min.js"></script>
+<!--全局配置文件-->
 <script src="config/AlertInfo.js"></script>
+<script src="config/BaseComponents.js"></script>
+<!--全局通用组件-->
 <script src="components/Demo.js"></script>
 <script src="components/MyComponent.js"></script>
 <script src="components/Navigator.js"></script>
 <script src="components/TabBar.js"></script>
 <script src="components/Menu.js"></script>
 <script src="components/ListPage.js"></script>
+<script src="components/ListPage.js"></script>
+<script src="components/EmptyPanel.js"></script>
+<!--页面-->
 <script src="views/Foo.js"></script>
 <script src="views/Bar.js"></script>
 <script src="views/Radio.js"></script>
-<script src="components/ListPage.js"></script>
 <script src="views/OrderDetail.js"></script>
 <script src="views/DemoPage.js"></script>
 <script src="views/OrderList.js"></script>
+<script src="views/TestVuex.js"></script>
+<script src="views/TestDraw.js"></script>
+<!--store相关-->
+<script src="store/testvue.js"></script>
+<script src="store/testapps.js"></script>
 <script>
     // 组件应该先注册方能使用,同时创建与注册组件
 	Vue.component('todo-item', {
@@ -63,16 +75,26 @@
 	    { path: '/listpage', component: ListPage},
 	    { path: '/orderdetail/:orderid', component: OrderDetail},
 	    { path: '/demopage', component: Demopage},
-	    { path: '/orderlist', component: OrderList}
+	    { path: '/orderlist', component: OrderList},
+	    { path: '/testvuex', component: TestVuex},
+	    { path: '/testdraw', component: TestDraw}
     ];
 
     var router = new VueRouter({
         routes: routes
     });
 
+    var store = new Vuex.Store({
+        modules: {
+	        testvue: testvue,
+            testapps: testapps
+        }
+    });
+
     var app = new Vue({
         el: '#app',
         router: router,
+        store: store,
         data: {
         	message: 'Hello Vue!',
             groceryList: [
@@ -94,6 +116,5 @@
         }
     });
 
-    console.dir(app);
 </script>
 </html>
