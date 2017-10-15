@@ -47,7 +47,7 @@ var base_form = function () {
 	f.property = {
 		ref: 'form',
 		model: 'form',
-		width: '80px'
+		width: '100px'
 	};
 	f.start = '<el-form ref="'+f.property.ref+'" :model="'+f.property.model+'" label-width="'+f.property.width+'">';
 	f.end = '</el-form>';
@@ -86,6 +86,7 @@ var base_textarea = function () {
 
 // 这是一个基本的radio组件
 var base_radio = function () {
+	var r = {};
 	r.property = {
 		label: '特殊资源',
 		model: 'form.resource',

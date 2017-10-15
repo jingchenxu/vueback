@@ -10,9 +10,10 @@ var input = BaseComponents.input('input', '测试信息');
 var form = BaseComponents.form();
 var select = BaseComponents.select();
 var textarea = BaseComponents.textarea();
-form.add('<div>form add</div>');
+var radio = BaseComponents.radio();
 form.add(select.template());
 form.add(textarea.template());
+form.add(radio.template());
 console.log('========='+form.template());
 EmptyPanel.options.template = form.template();
 var TestDraw = Vue.extend({

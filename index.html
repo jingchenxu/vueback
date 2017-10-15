@@ -9,7 +9,8 @@
 <body>
 <div id="app">
     <div class="leftMenu">
-        <my-menu v-bind:menu="menu" v-for="menu in menuList"></my-menu>
+        <!--<my-menu v-bind:menu="menu" v-for="menu in menuList"></my-menu>-->
+        <my-menulist></my-menulist>
     </div>
     <div class="rightContent">
         <my-navigator v-bind:user="user"></my-navigator>
@@ -31,6 +32,7 @@
 <!--全局配置文件-->
 <script src="config/AlertInfo.js"></script>
 <script src="config/BaseComponents.js"></script>
+<script src="config/IndexConfig.js"></script>
 <!--全局通用组件-->
 <script src="components/Demo.js"></script>
 <script src="components/MyComponent.js"></script>
@@ -40,6 +42,7 @@
 <script src="components/ListPage.js"></script>
 <script src="components/ListPage.js"></script>
 <script src="components/EmptyPanel.js"></script>
+<script src="components/MenuList.js"></script>
 <!--页面-->
 <script src="views/Foo.js"></script>
 <script src="views/Bar.js"></script>
@@ -62,11 +65,12 @@
 	Vue.component('vuedemo', {
 		template: '<div>show message</div>'
     });
-    //注册组件
+    //注册全局组件
 	Vue.component('my-component', MyComponent);
     Vue.component('my-navigator', Navigator);
     Vue.component('my-tabbar', TabBar);
     Vue.component('my-menu', Menu);
+    Vue.component('my-menulist', MenuList);
     //下面的是页面相关
     var routes = [
         { path: '/foo', component: Foo},
