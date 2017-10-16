@@ -114,10 +114,37 @@ var base_radio = function () {
 	return r;
 };
 
+//CheckBox组件
+var base_checkbox=function (data,template) {
+	template=template?template:''+'<el-checkbox-group>';
+	for(var j=0;j<data.children.length;j++){
+		template+='<el-checkbox label="'+data.children[j].label+'" name="type"></el-checkbox>';
+	}
+	template+='</el-checkbox-group>';
+    return template;
+};
+
+//form组件
+var base_forms=function(data){
+    var options=data.options;
+	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" label-width="'+data.width+'">';
+	for(var i=0;i<options.length;i++){
+		if(options[i].type=="checkbox"){
+			template+='<el-form-item label="'+options[i].label+'">';
+			var template1=eval("base_"+options[i].type+"(options[i],template);");
+			template=template1+'</el-form-item>';
+		}
+	}
+	template+='</el-form>';
+    return template;
+};
+
 var BaseComponents = {
 	input: base_input,
 	form: base_form,
 	select: base_select,
 	textarea: base_textarea,
-	radio: base_radio
+	radio: base_radio,
+	forms:base_forms,
+	checkbox:base_checkbox
 };

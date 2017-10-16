@@ -14,7 +14,7 @@ var radio = BaseComponents.radio();
 form.add(select.template());
 form.add(textarea.template());
 form.add(radio.template());
-console.log('========='+form.template());
+// console.log('========='+form.template());
 EmptyPanel.options.template = form.template();
 var TestDraw = Vue.extend({
 	template: template,
