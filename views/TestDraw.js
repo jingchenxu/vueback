@@ -11,10 +11,13 @@ var form = BaseComponents.form();
 var select = BaseComponents.select();
 var textarea = BaseComponents.textarea();
 var radio = BaseComponents.radio();
+var tag = BaseComponents.tag();
 form.add(select.template());
 form.add(textarea.template());
 form.add(radio.template());
+form.add(tag.template());
 console.log('========='+form.template());
+console.log('1111111111'+tag.template());
 EmptyPanel.options.template = form.template();
 var TestDraw = Vue.extend({
 	template: template,

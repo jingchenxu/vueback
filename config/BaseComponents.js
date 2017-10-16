@@ -26,12 +26,15 @@ var base_select = function () {
 			}
 		]
 	};
-	s.start = '  <el-form-item label="活动区域">' +
-		'    <el-select v-model="form.region" placeholder="请选择活动区域">';
+	s.start = function() {
+		var start = '  <el-form-item label="'+s.property.label+'">' +
+			'    <el-select v-model="form.region" placeholder="请选择活动区域">';
+		return start;
+	};
 	s.end = '    </el-select>' +
 		'  </el-form-item>';
 	s.template = function () {
-		var template = s.start;
+		var template = s.start();
 		for(var i=0; i<s.property.options.length; i++) {
 			template += '<el-option label="'+s.property.options[i].label+'" value="'+s.property.options[i].value+'"></el-option>';
 		}
@@ -114,10 +117,32 @@ var base_radio = function () {
 	return r;
 };
 
+var base_tag = function () {
+	var t = {};
+	t.property = {
+		type: '',
+		closable: false,
+		color: '',
+		hit: false,
+		value: '223'
+	};
+	t.template = function () {
+		var template = '<el-tag type="'+t.property.type+
+			'" v-bind:closable="'+t.property.closable+
+			'" v-bind:hit="'+t.property.hit+
+			'" color="'+t.property.color+'">'
+			+ t.property.value+
+			'</el-tag> '
+		return template;
+	};
+	return t;
+};
+
 var BaseComponents = {
 	input: base_input,
 	form: base_form,
 	select: base_select,
 	textarea: base_textarea,
-	radio: base_radio
+	radio: base_radio,
+	tag: base_tag
 };
