@@ -132,8 +132,7 @@ var base_radio = function () {
 	return r;
 };
 
-<<<<<<< HEAD
-var base_tag = function(){
+var base_tag = function() {
 	var t = {};
 	t.property = {
 		closable: 'true',
@@ -142,13 +141,14 @@ var base_tag = function(){
 	};
 	t.template = function () {
 		var template = '<el-tag' +
-			'  v-bind:closable="'+t.property.closable+'"' +
-			'  type="'+t.property.type+'"'+
-			'>'+t.property.value+'</el-tag>';
+			'  v-bind:closable="' + t.property.closable + '"' +
+			'  type="' + t.property.type + '"' +
+			'>' + t.property.value + '</el-tag>';
 		return template;
 	};
 	return t;
-=======
+};
+
 //CheckBox组件
 var base_checkbox=function (data,template) {
 	template=template?template:''+'<el-checkbox-group>';
@@ -172,7 +172,6 @@ var base_forms=function(data){
 	}
 	template+='</el-form>';
     return template;
->>>>>>> origin/zxy
 };
 
 var BaseComponents = {
@@ -181,10 +180,7 @@ var BaseComponents = {
 	select: base_select,
 	textarea: base_textarea,
 	radio: base_radio,
-<<<<<<< HEAD
-	tag: base_tag
-=======
+	tag: base_tag,
 	forms:base_forms,
 	checkbox:base_checkbox
->>>>>>> origin/zxy
 };
