@@ -10,7 +10,7 @@ var base_input = function (model, placeholder) {
 
 // 这是一个基本的下拉选择框
 var base_select = function () {
-	var s = {};
+	var s = new Object();
 	s.property = {
 		label: '活动区域',
 		model: 'form.region',
@@ -26,16 +26,22 @@ var base_select = function () {
 			}
 		]
 	};
-	s.start = '  <el-form-item label="活动区域">' +
-		'    <el-select v-model="form.region" placeholder="请选择活动区域">';
-	s.end = '    </el-select>' +
-		'  </el-form-item>';
+	s.start = function () {
+		var start = '  <el-form-item label="'+s.property.label+'">' +
+			'    <el-select v-model="form.region" placeholder="请选择活动区域">';
+		return start;
+	};
+	s.end = function () {
+		var end = '    </el-select>' +
+			'  </el-form-item>';
+		return end;
+	};
 	s.template = function () {
-		var template = s.start;
+		var template = s.start();
 		for(var i=0; i<s.property.options.length; i++) {
 			template += '<el-option label="'+s.property.options[i].label+'" value="'+s.property.options[i].value+'"></el-option>';
 		}
-		template += s.end;
+		template += s.end();
 		return template;
 	};
 	return s;
@@ -49,10 +55,16 @@ var base_form = function () {
 		model: 'form',
 		width: '100px'
 	};
-	f.start = '<el-form ref="'+f.property.ref+'" :model="'+f.property.model+'" label-width="'+f.property.width+'">';
-	f.end = '</el-form>';
+	f.start = function () {
+		var start = '<el-form ref="'+f.property.ref+'" :model="'+f.property.model+'" label-width="'+f.property.width+'">';
+		return start;
+	};
+	f.end = function () {
+		var end = '</el-form>';
+		return end;
+	};
 	f.elementList = [];
-	f.elementList[0] = f.start;
+	f.elementList[0] = f.start();
 	f.add = function (base_component) {
 		f.elementList.push(base_component);
 	};
@@ -61,7 +73,7 @@ var base_form = function () {
 		for(var i=0; i<f.elementList.length; i++){
 			template += f.elementList[i];
 		}
-		template += f.end;
+		template += f.end();
 		return template;
 	};
 	return f;
@@ -99,19 +111,42 @@ var base_radio = function () {
 			}
 		]
 	};
-	r.start = '  <el-form-item label="特殊资源">' +
-		'    <el-radio-group v-model="form.resource">';
-	r.end = 		'    </el-radio-group>' +
-		'  </el-form-item>';
+	r.start = function () {
+		var start = '  <el-form-item label="特殊资源">' +
+			'    <el-radio-group v-model="form.resource">';
+		return start;
+	};
+	r.end = function () {
+		var end = '    </el-radio-group>' +
+			'  </el-form-item>';
+		return end;
+	};
 	r.template = function () {
-		var template = r.start;
+		var template = r.start();
 		for(var i=0; i<r.property.radioList.length; i++) {
 			template += '<el-radio label="'+r.property.radioList[i].label+'"></el-radio>';
 		}
-		template += r.end;
+		template += r.end();
 		return template;
 	};
 	return r;
+};
+
+var base_tag = function(){
+	var t = {};
+	t.property = {
+		closable: 'true',
+		type: 'primary',
+		value: 'test'
+	};
+	t.template = function () {
+		var template = '<el-tag' +
+			'  v-bind:closable="'+t.property.closable+'"' +
+			'  type="'+t.property.type+'"'+
+			'>'+t.property.value+'</el-tag>';
+		return template;
+	};
+	return t;
 };
 
 var BaseComponents = {
@@ -119,5 +154,6 @@ var BaseComponents = {
 	form: base_form,
 	select: base_select,
 	textarea: base_textarea,
-	radio: base_radio
+	radio: base_radio,
+	tag: base_tag
 };

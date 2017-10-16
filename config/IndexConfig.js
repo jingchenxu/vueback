@@ -4,5 +4,6 @@
  */
 
 var IndexConfig = {
-	INDEX_MENU_URL: ''
+	INDEX_MENU_URL: '',
+	DEBUG_IS_ON: true
 };
