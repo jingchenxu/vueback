@@ -132,6 +132,7 @@ var base_radio = function () {
 	return r;
 };
 
+<<<<<<< HEAD
 var base_tag = function(){
 	var t = {};
 	t.property = {
@@ -147,6 +148,31 @@ var base_tag = function(){
 		return template;
 	};
 	return t;
+=======
+//CheckBox组件
+var base_checkbox=function (data,template) {
+	template=template?template:''+'<el-checkbox-group>';
+	for(var j=0;j<data.children.length;j++){
+		template+='<el-checkbox label="'+data.children[j].label+'" name="type"></el-checkbox>';
+	}
+	template+='</el-checkbox-group>';
+    return template;
+};
+
+//form组件
+var base_forms=function(data){
+    var options=data.options;
+	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" label-width="'+data.width+'">';
+	for(var i=0;i<options.length;i++){
+		if(options[i].type=="checkbox"){
+			template+='<el-form-item label="'+options[i].label+'">';
+			var template1=eval("base_"+options[i].type+"(options[i],template);");
+			template=template1+'</el-form-item>';
+		}
+	}
+	template+='</el-form>';
+    return template;
+>>>>>>> origin/zxy
 };
 
 var BaseComponents = {
@@ -155,5 +181,10 @@ var BaseComponents = {
 	select: base_select,
 	textarea: base_textarea,
 	radio: base_radio,
+<<<<<<< HEAD
 	tag: base_tag
+=======
+	forms:base_forms,
+	checkbox:base_checkbox
+>>>>>>> origin/zxy
 };

@@ -18,9 +18,13 @@ var radio = BaseComponents.radio();
 form.add(select.template());
 form.add(textarea.template());
 form.add(radio.template());
+<<<<<<< HEAD
 form.add(tag.template());
 console.log(tag.template()+'1231542134543253');
 console.log('========='+form.template());
+=======
+// console.log('========='+form.template());
+>>>>>>> origin/zxy
 EmptyPanel.options.template = form.template();
 var TestDraw = Vue.extend({
 	template: template,
