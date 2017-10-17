@@ -11,20 +11,16 @@ var form = BaseComponents.form();
 var select = BaseComponents.select();
 var tag = BaseComponents.tag();
 select.property.label = '测试';
-console.log('======================');
-console.log(select);
+// console.log('======================');
+// console.log(select);
 var textarea = BaseComponents.textarea();
 var radio = BaseComponents.radio();
 form.add(select.template());
 form.add(textarea.template());
 form.add(radio.template());
-<<<<<<< HEAD
 form.add(tag.template());
-console.log(tag.template()+'1231542134543253');
-console.log('========='+form.template());
-=======
+// console.log(tag.template()+'1231542134543253');
 // console.log('========='+form.template());
->>>>>>> origin/zxy
 EmptyPanel.options.template = form.template();
 var TestDraw = Vue.extend({
 	template: template,
