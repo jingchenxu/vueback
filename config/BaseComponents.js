@@ -120,11 +120,11 @@ var base_radio = function () {
 var base_tag = function () {
 	var t = {};
 	t.property = {
-		type: '',
-		closable: false,
+		type: 'success',
+		closable: true,
 		color: '',
 		hit: false,
-		value: '223'
+		value: '首页'
 	};
 	t.template = function () {
 		var template = '<el-tag type="'+t.property.type+

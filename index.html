@@ -52,6 +52,7 @@
 <script src="views/OrderList.js"></script>
 <script src="views/TestVuex.js"></script>
 <script src="views/TestDraw.js"></script>
+<script src="views/Tag.js"></script>
 <!--store相关-->
 <script src="store/testvue.js"></script>
 <script src="store/testapps.js"></script>
@@ -71,17 +72,18 @@
     Vue.component('my-tabbar', TabBar);
     Vue.component('my-menu', Menu);
     Vue.component('my-menulist', MenuList);
+    Vue.component('my-tag', Tag);
     //下面的是页面相关
     var routes = [
-        { path: '/foo', component: Foo},
-        { path: '/bar', component: Bar},
-	    { path: '/radio', component: Radio},
-	    { path: '/listpage', component: ListPage},
-	    { path: '/orderdetail/:orderid', component: OrderDetail},
-	    { path: '/demopage', component: Demopage},
-	    { path: '/orderlist', component: OrderList},
-	    { path: '/testvuex', component: TestVuex},
-	    { path: '/testdraw', component: TestDraw}
+        { path: '/foo', name: 'foo', component: Foo},
+        { path: '/bar', name: 'bar', component: Bar},
+	    { path: '/radio', name: 'radio', component: Radio},
+	    { path: '/listpage', name: 'listpage', component: ListPage},
+	    { path: '/orderdetail/:orderid', name: 'orderdetail', component: OrderDetail},
+	    { path: '/demopage', name: 'demopage', component: Demopage},
+	    { path: '/orderlist', name: 'orderlist', component: OrderList},
+	    { path: '/testvuex', name: 'testvuex', component: TestVuex},
+	    { path: '/testdraw', name: 'testdraw', component: TestDraw}
     ];
 
     var router = new VueRouter({
