@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2afe4d54-ad8d-40b2-87e9-9673c65ceaa3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Tag.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/MenuList.js" afterPath="$PROJECT_DIR$/components/MenuList.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/components/Navigator.js" afterPath="$PROJECT_DIR$/components/Navigator.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/BaseComponents.js" afterPath="$PROJECT_DIR$/config/BaseComponents.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/TestDraw.js" afterPath="$PROJECT_DIR$/views/TestDraw.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/Tag.js" afterPath="$PROJECT_DIR$/views/Tag.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,8 +47,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.717949">
-              <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+            <state vertical-scroll-proportion="56.820515">
+              <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -63,11 +57,11 @@
       <file leaf-file-name="Tag.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/Tag.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6602492">
-              <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.45639864">
+              <caret line="38" column="93" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="93" />
               <folding>
-                <marker date="1508240598039" expanded="true" signature="126:138" placeholder="..." />
-                <marker date="1508240598039" expanded="true" signature="393:411" placeholder="..." />
+                <marker date="1508243137907" expanded="true" signature="126:138" placeholder="..." />
+                <marker date="1508243137907" expanded="true" signature="393:411" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -455,7 +449,7 @@
     <option name="totallyTimeSpent" value="86055000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12974684" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -913,19 +907,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.717949">
-          <caret line="22" column="7" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="7" />
+        <state vertical-scroll-proportion="56.820515">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="26" selection-end-line="17" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/Tag.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6602492">
-          <caret line="60" column="26" selection-start-line="60" selection-start-column="26" selection-end-line="60" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.45639864">
+          <caret line="38" column="93" selection-start-line="38" selection-start-column="93" selection-end-line="38" selection-end-column="93" />
           <folding>
-            <marker date="1508240598039" expanded="true" signature="126:138" placeholder="..." />
-            <marker date="1508240598039" expanded="true" signature="393:411" placeholder="..." />
+            <marker date="1508243137907" expanded="true" signature="126:138" placeholder="..." />
+            <marker date="1508243137907" expanded="true" signature="393:411" placeholder="..." />
           </folding>
         </state>
       </provider>

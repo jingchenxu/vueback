@@ -29,19 +29,22 @@ var Tag = Vue.extend({
     },
     methods: {
         handleClose: function (tag, $event) {
-            console.log(tag);
+            //console.log(tag);
             var index = this.tags.indexOf(tag); // 当前被点击的tag标签位于标签数组的下标
             this.tags.splice(index,1);
             if (tag.path == this.$route.path && this.tags.length > 0) {
-                console.log(this.$route.path); // this.$route.path 可以得到当前地址
+                //console.log(this.$route.path); // this.$route.path 可以得到当前地址
                 if (index == 0) {
-                    location.href = "index.html#" + this.tags[0].path;
+                    //location.href = "index.html#" + this.tags[0].path;
+                    this.$router.push({name: this.tags[0].name, path: this.tags[0].path}) // https://router.vuejs.org/zh-cn/essentials/named-routes.html
                 } else {
-                    location.href = "index.html#" + this.tags[index - 1].path;
+                    //location.href = "index.html#" + this.tags[index - 1].path;
+                    this.$router.push({name: this.tags[index - 1].name, path: this.tags[index - 1].path})
                 }
             }
             if (tag.path == this.$route.path && this.tags.length == 0) {
-                location.href = 'index.html#/';
+                //location.href = 'index.html#/';
+                this.$router.push({name: '首页', path: '/'})
             }
             $event.preventDefault(); // 这是因为 tag 标签被放在 router-link 里面，当点击（哪怕是关闭该 tag）的时候会跳转，所以这里起到禁止跳转的功能
         },
@@ -51,7 +54,9 @@ var Tag = Vue.extend({
                 pathArr.push(this.tags[i].path);
             }
             console.log(pathArr);
-            console.log(this.$route.path);
+            console.log(this.tags);
+            //console.log(this.$route);
+            //console.log(this.$route.path);
             if (path === this.$route.path) {
                 return 'success';
             } else {
