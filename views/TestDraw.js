@@ -22,6 +22,8 @@ form.add(tag.template());
 console.log(tag.template()+'1231542134543253');
 console.log('========='+form.template());
 // console.log('========='+form.template());
+//console.log('========='+form.template());
+//console.log('1111111111'+tag.template());
 EmptyPanel.options.template = form.template();
 var TestDraw = Vue.extend({
 	template: template,
