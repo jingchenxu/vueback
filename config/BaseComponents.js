@@ -10,7 +10,7 @@ var base_input = function (model, placeholder) {
 
 // 这是一个基本的下拉选择框
 var base_select = function () {
-	var s = new Object();
+	var s = {};
 	s.property = {
 		label: '活动区域',
 		model: 'form.region',
@@ -37,11 +37,11 @@ var base_select = function () {
 		return end;
 	};
 	s.template = function () {
-		var template = s.start();
+		var template = s.start;
 		for(var i=0; i<s.property.options.length; i++) {
 			template += '<el-option label="'+s.property.options[i].label+'" value="'+s.property.options[i].value+'"></el-option>';
 		}
-		template += s.end();
+		template += s.end;
 		return template;
 	};
 	return s;
