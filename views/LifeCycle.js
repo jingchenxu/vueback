@@ -3,7 +3,7 @@
 @description 该页面主要用于演示生命周期
  */
 
-var template = '<div><el-button>测试</el-button></div>';
+var template = '<v-button>按钮</v-button>';
 
 var LifeCycle = Vue.extend({
 	template: template,

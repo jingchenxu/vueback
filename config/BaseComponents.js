@@ -129,11 +129,9 @@ var base_radio = function () {
 var base_tag = function() {
 	var t = {};
 	t.property = {
-		type: 'success',
-		closable: true,
 		color: '',
 		hit: false,
-		value: '首页'
+		value: '首页',
 		closable: 'true',
 		type: 'primary',
 		value: 'test'
