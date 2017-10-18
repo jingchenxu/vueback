@@ -52,8 +52,8 @@
     "submenu": [
       {
         "index": "2-1",
-        "title": "选项1",
-        "url": "#/orderlist"
+        "title": "form",
+        "url": "#/testform"
       },
       {
         "index": "2-2",
