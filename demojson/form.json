@@ -2,28 +2,40 @@
   "ref": "form",
   "model": "form",
   "width": "100px",
-  "options":[
+  "options": [
     {
-      "label":"复选框",
-      "model":[],
-      "type":"checkbox",
-      "children":[
-        {"label":"1","name":""},
-        {"label":"2","name":""},
-        {"label":"3","name":""},
-        {"label":"4","name":""}
+      "label": "复选框",
+      "model": [],
+      "type": "checkbox",
+      "children": [
+        {
+          "label": "1",
+          "name": ""
+        },
+        {
+          "label": "2",
+          "name": ""
+        },
+        {
+          "label": "3",
+          "name": ""
+        },
+        {
+          "label": "4",
+          "name": ""
+        }
       ]
     },
     {
-      "label":"input",
-      "modal":[],
-      "type":"input",
-      "placeholder":"默认值"
+      "label": "输入框",
+      "modal": [],
+      "type": "input",
+      "placeholder": "默认值"
     },
     {
       "label": "活动区域",
       "model": "form.region",
-      "type":"select",
+      "type": "select",
       "placeholder": "请选择活动区域",
       "children": [
         {
@@ -37,6 +49,21 @@
       ]
     },
     {
+      "label": "特殊资源",
+      "model": "form.resource",
+      "type": "radio",
+      "children": [
+        {
+          "label": "线上品牌赞助商",
+          "value": "shanghai"
+        },
+        {
+          "label": "线下场地免费",
+          "value": "shanghai"
+        }
+      ]
+    },
+    {
       "label": "活动形式",
       "type": "textarea",
       "model": "form.desc"
@@ -44,9 +71,16 @@
     {
       "label": "",
       "type": "button",
-      "content":"提交",
-      "color":"primary",
-      "clickfn":"onSubmit"
+      "content": "提交",
+      "color": "primary",
+      "clickfn": "onSubmit"
+    },
+    {
+      "label": "",
+      "type": "button",
+      "content": "重置",
+      "color": "",
+      "clickfn": ""
     }
   ]
 }

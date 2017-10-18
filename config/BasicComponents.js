@@ -38,6 +38,16 @@ var base_checkbox = function (data, template) {
 	return template;
 };
 
+// 这是一个基本的radio组件
+var base_radio = function (data) {
+	var template = ' <el-radio-group v-model="' + data.model + '">';
+	for (var j = 0; j < data.children.length; j++) {
+		template += '<el-radio label="' + data.children[j].label + '" value="' + data.children[j].value + '"></el-radio>';
+	}
+	template += '</el-radio-group>';
+	return template;
+};
+
 //form组件
 var base_form=function(data){
 	var options=data.options;
@@ -62,6 +72,7 @@ var BasicComponents = {
 	select: base_select,
 	button:base_button,
 	textarea: base_textarea,
+	radio: base_radio,
 	form:base_form,
 	checkbox:base_checkbox
 };
