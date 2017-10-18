@@ -16,7 +16,7 @@ MyPlugin.install = function (Vue, options) {
 
 	Vue.mixin({
 		created: function () {
-			console.log('function3');
+			// console.log('function3');
 		}
 	});
 

@@ -1,65 +1,28 @@
 /**
  * Created by user on 2017/10/16.
  */
-
-console.log(BasicComponents);
-var property = {
-	ref: 'form',
-	model: 'form',
-	width: '100px',
-	options:[
-		{
-			label:'复选框',
-			model:[],
-			type:"checkbox",
-			children:[
-				{label:"1",name:""},
-				{label:"2",name:""},
-				{label:"3",name:""},
-				{label:"4",name:""}
-			]
-		},
-		{
-			label:"单选",
-			modal:"",
-			type:"radio",
-			children:[
-				{label:"1",name:""},
-				{label:"2",name:""},
-				{label:"4",name:""}
-			]
-		},
-		{
-			label:"input",
-			modal:[],
-			type:"input",
-			placeholder:"默认值"
-		},
-		{
-			label: '活动区域',
-			model: 'form.region',
-			type:"select",
-			placeholder: '请选择活动区域',
-			options: [
-				{
-					label: '区域一',
-					value: 'shanghai'
-				},
-				{
-					label: '区域二',
-					value: 'beijing'
-				}
-			]
-		}
-	]
-};
-var template=BasicComponents.form(property);
-console.log(template)
+var template;
+var property;
+$.ajax({
+	url: "/vueback/demojson/form.json",
+	async:false,
+	success: function (data) {
+		// console.dir(data);
+		property = data;
+		// console.log(property)
+		template = BasicComponents.form(property);
+		// console.log(template)
+	}
+});
 var TestForm = Vue.extend({
+	beforeCreate: function () {
+		// console.log(this)
+	},
 	template: template,
 	data: function () {
 		return{
-			message: 'test vuex',
+			template: "<div>ceshiaaaaaaa</div>",
+			property: [],
 			form: {
 				name: '',
 				region: '',
@@ -70,6 +33,18 @@ var TestForm = Vue.extend({
 				resource: '',
 				desc: ''
 			}
+		}
+	},
+	created:function(){
+		// console.log("000000000000000000",this.form)
+		
+	},
+	methods: {
+		onSubmit: function(val) {
+			console.log('看看外部组件的输出'+val);
+			console.dir(val);
+			// location.href='#/orderdetail/'+val.orderid;
+			// this.$message(AlertIfo.TEST_INFO);
 		}
 	}
 });

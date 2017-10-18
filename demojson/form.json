@@ -1,0 +1,52 @@
+{
+  "ref": "form",
+  "model": "form",
+  "width": "100px",
+  "options":[
+    {
+      "label":"复选框",
+      "model":[],
+      "type":"checkbox",
+      "children":[
+        {"label":"1","name":""},
+        {"label":"2","name":""},
+        {"label":"3","name":""},
+        {"label":"4","name":""}
+      ]
+    },
+    {
+      "label":"input",
+      "modal":[],
+      "type":"input",
+      "placeholder":"默认值"
+    },
+    {
+      "label": "活动区域",
+      "model": "form.region",
+      "type":"select",
+      "placeholder": "请选择活动区域",
+      "children": [
+        {
+          "label": "区域一",
+          "value": "shanghai"
+        },
+        {
+          "label": "区域二",
+          "value": "beijing"
+        }
+      ]
+    },
+    {
+      "label": "活动形式",
+      "type": "textarea",
+      "model": "form.desc"
+    },
+    {
+      "label": "",
+      "type": "button",
+      "content":"提交",
+      "color":"primary",
+      "clickfn":"onSubmit"
+    }
+  ]
+}
