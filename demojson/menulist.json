@@ -6,34 +6,42 @@
     "submenu": [
       {
         "index": "1-1",
-        "title": "选项1"
+        "title": "订单列表",
+        "url": "#/orderlist"
       },
       {
         "index": "1-2",
-        "title": "选项2"
+        "title": "测试订单详情页",
+        "url": "#/testdraw"
       },
       {
         "index": "1-3",
-        "title": "选项3"
+        "title": "测试页面",
+        "url": "#/lifecycle"
       },
       {
         "index": "1-4",
-        "title": "选项4"
+        "title": "选项4",
+        "url": "#/orderlist"
       },
       {
         "index": "1-5",
-        "title": "选项5"
+        "title": "选项5",
+        "url": "#/orderlist"
       },      {
         "index": "1-6",
-        "title": "选项6"
+        "title": "选项6",
+        "url": "#/orderlist"
       },
       {
         "index": "1-7",
-        "title": "选项7"
+        "title": "选项7",
+        "url": "#/orderlist"
       },
       {
         "index": "1-8",
-        "title": "选项8"
+        "title": "选项8",
+        "url": "#/orderlist"
       }
     ]
   },
@@ -44,19 +52,23 @@
     "submenu": [
       {
         "index": "2-1",
-        "title": "选项1"
+        "title": "选项1",
+        "url": "#/orderlist"
       },
       {
         "index": "2-2",
-        "title": "选项2"
+        "title": "选项2",
+        "url": "#/orderlist"
       },
       {
         "index": "2-3",
-        "title": "选项3"
+        "title": "选项3",
+        "url": "#/orderlist"
       },
       {
         "index": "2-4",
-        "title": "选项4"
+        "title": "选项4",
+        "url": "#/orderlist"
       }
     ]
   }

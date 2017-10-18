@@ -26,15 +26,18 @@ var base_select = function () {
 			}
 		]
 	};
-	s.start = function() {
+	s.start = function () {
 		var start = '  <el-form-item label="'+s.property.label+'">' +
 			'    <el-select v-model="form.region" placeholder="请选择活动区域">';
 		return start;
 	};
-	s.end = '    </el-select>' +
-		'  </el-form-item>';
+	s.end = function () {
+		var end = '    </el-select>' +
+			'  </el-form-item>';
+		return end;
+	};
 	s.template = function () {
-		var template = s.start();
+		var template = s.start;
 		for(var i=0; i<s.property.options.length; i++) {
 			template += '<el-option label="'+s.property.options[i].label+'" value="'+s.property.options[i].value+'"></el-option>';
 		}
@@ -102,40 +105,70 @@ var base_radio = function () {
 			}
 		]
 	};
-	r.start = '  <el-form-item label="特殊资源">' +
-		'    <el-radio-group v-model="form.resource">';
-	r.end = 		'    </el-radio-group>' +
-		'  </el-form-item>';
+	r.start = function () {
+		var start = '  <el-form-item label="特殊资源">' +
+			'    <el-radio-group v-model="form.resource">';
+		return start;
+	};
+	r.end = function () {
+		var end = '    </el-radio-group>' +
+			'  </el-form-item>';
+		return end;
+	};
 	r.template = function () {
-		var template = r.start;
+		var template = r.start();
 		for(var i=0; i<r.property.radioList.length; i++) {
 			template += '<el-radio label="'+r.property.radioList[i].label+'"></el-radio>';
 		}
-		template += r.end;
+		template += r.end();
 		return template;
 	};
 	return r;
 };
 
-var base_tag = function () {
+var base_tag = function() {
 	var t = {};
 	t.property = {
-		type: 'success',
-		closable: true,
 		color: '',
 		hit: false,
-		value: '首页'
+		value: '首页',
+		closable: 'true',
+		type: 'primary',
+		value: 'test'
 	};
 	t.template = function () {
-		var template = '<el-tag type="'+t.property.type+
-			'" v-bind:closable="'+t.property.closable+
-			'" v-bind:hit="'+t.property.hit+
-			'" color="'+t.property.color+'">'
-			+ t.property.value+
-			'</el-tag> '
+		var template = '<el-tag' +
+			'  v-bind:closable="' + t.property.closable + '"' +
+			'  type="' + t.property.type + '"' +
+			'>' + t.property.value + '</el-tag>';
 		return template;
 	};
 	return t;
+};
+
+//CheckBox组件
+var base_checkbox=function (data,template) {
+	template=template?template:''+'<el-checkbox-group>';
+	for(var j=0;j<data.children.length;j++){
+		template+='<el-checkbox label="'+data.children[j].label+'" name="type"></el-checkbox>';
+	}
+	template+='</el-checkbox-group>';
+    return template;
+};
+
+//form组件
+var base_forms=function(data){
+    var options=data.options;
+	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" label-width="'+data.width+'">';
+	for(var i=0;i<options.length;i++){
+		if(options[i].type=="checkbox"){
+			template+='<el-form-item label="'+options[i].label+'">';
+			var template1=eval("base_"+options[i].type+"(options[i],template);");
+			template=template1+'</el-form-item>';
+		}
+	}
+	template+='</el-form>';
+    return template;
 };
 
 var BaseComponents = {
@@ -144,5 +177,7 @@ var BaseComponents = {
 	select: base_select,
 	textarea: base_textarea,
 	radio: base_radio,
-	tag: base_tag
+	tag: base_tag,
+	forms:base_forms,
+	checkbox:base_checkbox
 };

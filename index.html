@@ -5,6 +5,7 @@
     <title>vue demo</title>
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-default/index.css">
     <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/vue-beauty.min.css" type="text/css">
 </head>
 <body>
 <div id="app">
@@ -23,17 +24,25 @@
 </body>
 <!--<script src="js/vue.min.js"></script>-->
 <!--外部引入框架js-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <script src="https://unpkg.com/vuex"></script>
+<script src="js/vue-beauty.min.js"></script>
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 <script src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
+<!--<script src="js/style.min.js"></script>-->
+
 <script src="js/jquery-3.2.1.min.js"></script>
 <!--全局配置文件-->
 <script src="config/AlertInfo.js"></script>
 <script src="config/BaseComponents.js"></script>
 <script src="config/IndexConfig.js"></script>
+<!--工具类-->
+<script src="utils/MyPlugin.js"></script>
+<script src="utils/MyRequire.js"></script>
 <!--全局通用组件-->
+<script src="components/BaseComponent.js"></script>
 <script src="components/Demo.js"></script>
 <script src="components/MyComponent.js"></script>
 <script src="components/Navigator.js"></script>
@@ -49,9 +58,11 @@
 <script src="views/Radio.js"></script>
 <script src="views/OrderDetail.js"></script>
 <script src="views/DemoPage.js"></script>
-<script src="views/OrderList.js"></script>
+<!--<script src="views/OrderList.js"></script>-->
 <script src="views/TestVuex.js"></script>
 <script src="views/TestDraw.js"></script>
+<script src="views/LifeCycle.js"></script>
+<script src="views/TestForm.js"></script>
 <script src="views/Tag.js"></script>
 <!--store相关-->
 <script src="store/testvue.js"></script>
@@ -66,6 +77,8 @@
 	Vue.component('vuedemo', {
 		template: '<div>show message</div>'
     });
+	//注入工具方法
+    Vue.use(MyPlugin);
     //注册全局组件
 	Vue.component('my-component', MyComponent);
     Vue.component('my-navigator', Navigator);
@@ -79,11 +92,13 @@
         { path: '/bar', name: 'bar', component: Bar},
 	    { path: '/radio', name: 'radio', component: Radio},
 	    { path: '/listpage', name: 'listpage', component: ListPage},
-	    { path: '/orderdetail/:orderid', name: 'orderdetail', component: OrderDetail},
+	    { path: '/orderdetail/:orderid', name: '订单详情', component: OrderDetail},
 	    { path: '/demopage', name: 'demopage', component: Demopage},
-	    { path: '/orderlist', name: 'orderlist', component: OrderList},
+	    { path: '/orderlist', name: '订单列表', component: MyRequire('/vueback/views/OrderList.js')},
 	    { path: '/testvuex', name: 'testvuex', component: TestVuex},
-	    { path: '/testdraw', name: 'testdraw', component: TestDraw}
+	    { path: '/testdraw', name: 'testdraw', component: TestDraw},
+        { path: '/lifecycle', component: LifeCycle},
+	    { path: '/testform', component: TestForm}
     ];
 
     var router = new VueRouter({
