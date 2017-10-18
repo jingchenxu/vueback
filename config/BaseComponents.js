@@ -10,7 +10,7 @@ var base_input = function (model, placeholder) {
 
 // 这是一个基本的下拉选择框
 var base_select = function () {
-	var s = new Object();
+	var s = {};
 	s.property = {
 		label: '活动区域',
 		model: 'form.region',
@@ -37,11 +37,11 @@ var base_select = function () {
 		return end;
 	};
 	s.template = function () {
-		var template = s.start();
+		var template = s.start;
 		for(var i=0; i<s.property.options.length; i++) {
 			template += '<el-option label="'+s.property.options[i].label+'" value="'+s.property.options[i].value+'"></el-option>';
 		}
-		template += s.end();
+		template += s.end;
 		return template;
 	};
 	return s;
@@ -55,16 +55,10 @@ var base_form = function () {
 		model: 'form',
 		width: '100px'
 	};
-	f.start = function () {
-		var start = '<el-form ref="'+f.property.ref+'" :model="'+f.property.model+'" label-width="'+f.property.width+'">';
-		return start;
-	};
-	f.end = function () {
-		var end = '</el-form>';
-		return end;
-	};
+	f.start = '<el-form ref="'+f.property.ref+'" :model="'+f.property.model+'" label-width="'+f.property.width+'">';
+	f.end = '</el-form>';
 	f.elementList = [];
-	f.elementList[0] = f.start();
+	f.elementList[0] = f.start;
 	f.add = function (base_component) {
 		f.elementList.push(base_component);
 	};
@@ -73,7 +67,7 @@ var base_form = function () {
 		for(var i=0; i<f.elementList.length; i++){
 			template += f.elementList[i];
 		}
-		template += f.end();
+		template += f.end;
 		return template;
 	};
 	return f;
@@ -135,6 +129,9 @@ var base_radio = function () {
 var base_tag = function() {
 	var t = {};
 	t.property = {
+		color: '',
+		hit: false,
+		value: '首页',
 		closable: 'true',
 		type: 'primary',
 		value: 'test'
