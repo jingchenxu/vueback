@@ -57,6 +57,10 @@ var base_form=function(data){
 			template+='<el-form-item label="'+options[i].label+'">';
 			var resulttemplate = eval("base_" + options[i].type +"(options[i],template);");
 			template = resulttemplate+'</el-form-item>';
+		// } else if (options[i].type == "select") {
+		// 	template += '<el-form-item label="' + options[i].label + '" prop = "'+options[i].prop  + '>';
+		// 	var template1 = eval("base_" + options[i].type + "(options[i]);");
+		// 	template = template + template1 + '</el-form-item>';
 		}else{
 			template+='<el-form-item label="'+options[i].label+'">';
 			var template1=eval("base_"+options[i].type+"(options[i]);");

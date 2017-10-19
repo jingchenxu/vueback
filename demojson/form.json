@@ -37,6 +37,7 @@
       "model": "form.region",
       "type": "select",
       "placeholder": "请选择活动区域",
+      "prop":"region",
       "children": [
         {
           "label": "区域一",
@@ -80,7 +81,13 @@
       "type": "button",
       "content": "重置",
       "color": "",
-      "clickfn": ""
+      "clickfn": "resetForm"
     }
-  ]
+  ],
+  "rules": {
+		"region": [
+      { "required": true, "message": "请选择活动区域", "trigger": "change"
+      }
+    ]
+  }
 }
