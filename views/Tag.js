@@ -8,7 +8,8 @@
 var template = '<div style="float: left;">' +
                 '<router-link v-bind:to="tag.path" v-for="(tag,index) in tags" v-bind:key="tag.path">' +
                 '<el-tag v-bind:closable="closable" ' +
-                'v-bind:hit="hit" color="color" v-bind:type="isActive(tag.path)" style="margin-left: 10px;" v-on:close="handleClose(tag, $event)">' +
+                'v-bind:hit="hit" color="color" v-bind:type="isActive(tag.path)" style="margin-left: 10px;" ' +
+                'v-on:close="handleClose(tag, $event)">' +
                 '{{tag.name}}</el-tag></router-link></div>';
 var Tag = Vue.extend({
     template: template,
