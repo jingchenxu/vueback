@@ -5,8 +5,9 @@
   "options": [
     {
       "label": "复选框",
-      "model": [],
+      "model": "form.type",
       "type": "checkbox",
+      "prop": "type",
       "children": [
         {
           "label": "1",
@@ -28,17 +29,19 @@
     },
     {
       "label": "输入框",
-      "modal": [],
+      "model": "form.name",
       "type": "input",
-      "placeholder": "默认值"
+      "prop": "name",
+      "placeholder": "默认值",
+      "change":"change1"
     },
     {
       "label": "发布时间",
-      "modal": "form.date1",
-      "type": "datetime",
+      "model": "form.date1",
+      "type": "date",
       "prop":"date1",
       "placeholder": "选择日期时间",
-      "format":"yyyy-MM-dd HH:mm:ss"
+      "format":"yyyy-MM-dd"
     },
     {
       "label": "活动区域",
@@ -61,6 +64,7 @@
       "label": "特殊资源",
       "model": "form.resource",
       "type": "radio",
+      "prop": "resource",
       "children": [
         {
           "label": "线上品牌赞助商",
@@ -75,6 +79,7 @@
     {
       "label": "活动形式",
       "type": "textarea",
+      "prop": "desc",
       "model": "form.desc"
     },
     {

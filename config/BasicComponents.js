@@ -4,7 +4,7 @@
 
 // 这是一个基本的输入框
 var base_input = function (data) {
-	return '<el-input v-model="'+data.model+'" placeholder="'+data.placeholder+'"></el-input>';
+	return '<el-input  v-model="'+data.model+'" placeholder="'+data.placeholder+'" @change="'+data.change+'"></el-input>';
 };
 
 // 这是一个基本的下拉选择框
@@ -29,10 +29,10 @@ var base_textarea = function (data) {
 };
 
 //CheckBox组件
-var base_checkbox = function (data, template) {
-	template = template ? template : '' +'<el-checkbox-group>';
+var base_checkbox = function (data) {
+	var template = '<el-checkbox-group v-model="'+data.model+'">';
 	for(var j=0;j<data.children.length;j++){
-		template+='<el-checkbox label="'+data.children[j].label+'" name="type"></el-checkbox>';
+		template += '<el-checkbox label="' + data.children[j].label +'"></el-checkbox>';
 	}
 	template+='</el-checkbox-group>';
 	return template;
@@ -49,7 +49,7 @@ var base_radio = function (data) {
 };
 
 // 时间组件
-var base_datetime = function (data) {
+var base_date = function (data) {
 	return ' <el-date-picker v-model="' + data.model + '" type="' + data.type +'" format="'+data.format+'" placeholder="'+data.placeholder+'"></el-date-picker>';
 };
 
@@ -58,15 +58,9 @@ var base_form=function(data){
 	var options=data.options;
 	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" :rules="'+data.rules+'" label-width="'+data.width+'">';
 	for(var i=0;i<options.length;i++){
-		if(options[i].type=="checkbox"){
-			template+='<el-form-item label="'+options[i].label+'">';
-			var resulttemplate = eval("base_" + options[i].type +"(options[i],template);");
-			template = resulttemplate+'</el-form-item>';
-		}else{
-			template += '<el-form-item label="' + options[i].label + '" prop = "'+options[i].prop + '">';
-			var template1=eval("base_"+options[i].type+"(options[i]);");
-			template =template+template1+'</el-form-item>';
-		}
+		template += '<el-form-item label="' + options[i].label + '" prop = "' + options[i].prop + '">';
+		var template1 = eval("base_" + options[i].type + "(options[i]);");
+		template = template + template1 + '</el-form-item>';	
 	}
 	template+='</el-form>';
 	return template;
@@ -79,6 +73,6 @@ var BasicComponents = {
 	textarea: base_textarea,
 	radio: base_radio,
 	form:base_form,
-	datetime:base_datetime,
+	datetime:base_date,
 	checkbox:base_checkbox
 };
