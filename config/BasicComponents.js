@@ -20,7 +20,7 @@ var base_select = function (data) {
 
 // 这是一个button
 var base_button = function (data) {
-	return '<el-button type="'+data.color+'" @click="onSubmit">'+data.content+'</el-button>' ;
+	return '<el-button type="'+data.color+'" @click="'+data.clickfn+'">'+data.content+'</el-button>' ;
 };
 
 // 这是一个基本的文字填写框
@@ -51,18 +51,14 @@ var base_radio = function (data) {
 //form组件
 var base_form=function(data){
 	var options=data.options;
-	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" label-width="'+data.width+'">';
+	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" :rules="'+data.rules+'" label-width="'+data.width+'">';
 	for(var i=0;i<options.length;i++){
 		if(options[i].type=="checkbox"){
 			template+='<el-form-item label="'+options[i].label+'">';
 			var resulttemplate = eval("base_" + options[i].type +"(options[i],template);");
 			template = resulttemplate+'</el-form-item>';
-		// } else if (options[i].type == "select") {
-		// 	template += '<el-form-item label="' + options[i].label + '" prop = "'+options[i].prop  + '>';
-		// 	var template1 = eval("base_" + options[i].type + "(options[i]);");
-		// 	template = template + template1 + '</el-form-item>';
 		}else{
-			template+='<el-form-item label="'+options[i].label+'">';
+			template += '<el-form-item label="' + options[i].label + '" prop = "'+options[i].prop + '">';
 			var template1=eval("base_"+options[i].type+"(options[i]);");
 			template =template+template1+'</el-form-item>';
 		}

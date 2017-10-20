@@ -26,6 +26,11 @@ var TestForm = Vue.extend({
 				type: [],
 				resource: '',
 				desc: ''
+			},
+			rules:{
+				region: [
+					{ required: true, message: '请选择活动区域', trigger: 'change' }
+				]
 			}
 		}
 	},
@@ -49,13 +54,21 @@ var TestForm = Vue.extend({
 					"color": "",
 					"clickfn": ""
 				})
-			console.log(this.property.options[0],this.property.rules)	
-			console.log(TestForm.options)
-			// location.href='#/orderdetail/'+val.orderid;
+			// console.log(this.property.options[0],this.property.rules)
+			// console.log(TestForm.options)
+			console.log(this.$data,this.$refs.form)
+			this.$refs.form.validate(function(valid){
+				if (valid) {
+					alert('submit!');
+				} else {
+					console.log('error submit!!');
+					return false;
+				}
+			});
 			// this.$message(AlertIfo.TEST_INFO);
 		},
-		resetForm(formName) {
-			this.$refs[formName].resetFields();
+		resetForm:function(){
+			this.$refs.form.resetFields();
 		}
 	}
 });
