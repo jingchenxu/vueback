@@ -3,31 +3,31 @@ var MyPlugin = {};
 MyPlugin.install = function (Vue, options) {
     // 没搞懂
 	Vue.myGlobalMethod = function () {
-		console.log('function1');
+		//console.log('function1');
 		return 'function1';
 	};
     
 	// 没搞懂
 	Vue.directive('my-directive', {
 		bind: function (el, binding, vnode, oldVnode) {
-			console.log('function2');
+			//console.log('function2');
 		}
 	});
 
 	Vue.mixin({
 		created: function () {
-			// console.log('function3');
+			//console.log('function3');
 		}
 	});
 
 	Vue.prototype.$myMethod = function (methodOptions) {
-		console.log('function4');
+		//console.log('function4');
 	};
 
 	// 日志只会在允许输出的情况下才会输出
 	Vue.prototype.$log = function (val) {
 		if(IndexConfig.DEBUG_IS_ON){
-			console.log(val);
+			//console.log(val);
 		}
 	};
 	

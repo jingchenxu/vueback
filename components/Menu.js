@@ -10,7 +10,7 @@ var Menu = Vue.extend({
 		clickMenu: function (id) {
 			console.log('菜单被点击了'+id);
 			$.get('/vueback/views/Page1.js',function (data) {
-				console.dir(eval(data));
+				//console.dir(eval(data));
 				Vue.component('my-page1', eval(data));
 			})
 		}

@@ -37,7 +37,6 @@
 <!--全局配置文件-->
 <script src="config/AlertInfo.js"></script>
 <script src="config/BaseComponents.js"></script>
-<script src="config/BasicComponents.js"></script>
 <script src="config/IndexConfig.js"></script>
 <!--工具类-->
 <script src="utils/MyPlugin.js"></script>
@@ -53,6 +52,8 @@
 <script src="components/ListPage.js"></script>
 <script src="components/EmptyPanel.js"></script>
 <script src="components/MenuList.js"></script>
+<script src="components/Hamburger.js"></script>
+<script src="components/PageName.js"></script>
 <!--页面-->
 <script src="views/Foo.js"></script>
 <script src="views/Bar.js"></script>
@@ -65,9 +66,11 @@
 <script src="views/LifeCycle.js"></script>
 <script src="views/TestForm.js"></script>
 <script src="views/Tag.js"></script>
+<script src="zzliTest/TestTableZzli.js"></script>
 <!--store相关-->
 <script src="store/testvue.js"></script>
 <script src="store/testapps.js"></script>
+<script src="store/testSidebar.js"></script>
 <script>
     // 组件应该先注册方能使用,同时创建与注册组件
 	Vue.component('todo-item', {
@@ -87,9 +90,12 @@
     Vue.component('my-menu', Menu);
     Vue.component('my-menulist', MenuList);
     Vue.component('my-tag', Tag);
+    Vue.component('my-hamburger', Hamburger);
+    Vue.component('my-PageName', PageName);
     //下面的是页面相关
     var routes = [
-        { path: '/foo', name: 'foo', component: Foo},
+        { path: '/', name: '首页'},
+        { path: '/foo', name: 'foo', component: Foo, alias: '/bar'},
         { path: '/bar', name: 'bar', component: Bar},
 	    { path: '/radio', name: 'radio', component: Radio},
 	    { path: '/listpage', name: 'listpage', component: ListPage},
@@ -98,18 +104,24 @@
 	    { path: '/orderlist', name: '订单列表', component: MyRequire('/vueback/views/OrderList.js')},
 	    { path: '/testvuex', name: 'testvuex', component: TestVuex},
 	    { path: '/testdraw', name: 'testdraw', component: TestDraw},
-        { path: '/lifecycle', name:'lifecycle', component: LifeCycle},
-	    { path: '/testform',  name: 'testform', component: TestForm}
+        { path: '/lifecycle', component: LifeCycle},
+	    { path: '/testform', component: TestForm},
+        { path: '/testTableZzli', name: '测试table页', component: TestTableZzli}
     ];
 
     var router = new VueRouter({
         routes: routes
     });
 
+//    router.beforeEach(function (to, from, next) { // 全局守卫
+//        console.log('全局守卫');
+//    });
+
     var store = new Vuex.Store({
         modules: {
 	        testvue: testvue,
-            testapps: testapps
+            testapps: testapps,
+            testSidebar: testSidebar
         }
     });
 
