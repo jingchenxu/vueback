@@ -33,6 +33,14 @@
       "placeholder": "默认值"
     },
     {
+      "label": "发布时间",
+      "modal": "form.date1",
+      "type": "datetime",
+      "prop":"date1",
+      "placeholder": "选择日期时间",
+      "format":"yyyy-MM-dd HH:mm:ss"
+    },
+    {
       "label": "活动区域",
       "model": "form.region",
       "type": "select",

@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2782ff91-1baa-4897-986d-9b271e25723b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/BasicComponents.js" afterPath="$PROJECT_DIR$/config/BasicComponents.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demojson/form.json" afterPath="$PROJECT_DIR$/demojson/form.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/TestForm.js" afterPath="$PROJECT_DIR$/views/TestForm.js" />
@@ -45,34 +44,47 @@
       <file leaf-file-name="form.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/demojson/form.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="20" />
+            <state relative-caret-position="259">
+              <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
               <folding>
                 <element signature="e#77#442#0" expanded="false" />
                 <element signature="e#448#546#0" expanded="false" />
-                <element signature="e#877#1150#0" expanded="false" />
-                <element signature="e#1156#1239#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasicComponents.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BasicComponents.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/BasicComponents.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1329">
-              <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+            <state relative-caret-position="0">
+              <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TestForm.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="TestForm.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/TestForm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-655">
-              <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="128">
+              <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+              <folding>
+                <marker date="1508478543764" expanded="true" signature="344:722" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="354:719" ph="{&quot;property&quot;: datajson...}" />
+                <marker date="1508478543764" expanded="true" signature="531:715" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="545:710" ph="[...]" />
+                <marker date="1508478543764" expanded="true" signature="751:782" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="803:949" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="961:1643" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="989:1577" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="1121:1222" ph="{&quot;label&quot;: &quot;&quot;...}" />
+                <marker date="1508478543764" expanded="true" signature="1227:1323" ph="//..." />
+                <marker date="1508478543764" expanded="true" signature="1410:1530" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="1427:1457" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="1463:1525" ph="{...}" />
+                <marker date="1508478543764" expanded="true" signature="1601:1640" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -106,9 +118,9 @@
         <option value="$PROJECT_DIR$/components/MenuList.js" />
         <option value="$PROJECT_DIR$/views/LifeCycle.js" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/views/TestForm.js" />
         <option value="$PROJECT_DIR$/demojson/form.json" />
         <option value="$PROJECT_DIR$/config/BasicComponents.js" />
-        <option value="$PROJECT_DIR$/views/TestForm.js" />
       </list>
     </option>
   </component>
@@ -119,9 +131,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="829" />
+    <option name="x" value="480" />
     <option name="y" value="39" />
-    <option name="width" value="1230" />
+    <option name="width" value="1579" />
     <option name="height" value="1008" />
   </component>
   <component name="ProjectView">
@@ -311,12 +323,12 @@
       <workItem from="1508307415680" duration="5914000" />
       <workItem from="1508319653471" duration="2332000" />
       <workItem from="1508375093823" duration="6843000" />
-      <workItem from="1508461642975" duration="5349000" />
+      <workItem from="1508461642975" duration="6642000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24319000" />
+    <option name="totallyTimeSpent" value="25612000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,10 +340,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="829" y="39" width="1230" height="1008" extended-state="0" />
+    <frame x="480" y="39" width="1579" height="1008" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0605042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.046783626" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32947975" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1283237" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -504,7 +516,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
           <caret line="57" column="34" lean-forward="true" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="42" />
-          <folding />
+          <folding>
+            <marker date="1508478543764" expanded="true" signature="344:722" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="354:719" ph="{&quot;property&quot;: datajson...}" />
+            <marker date="1508478543764" expanded="true" signature="531:715" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="545:710" ph="[...]" />
+            <marker date="1508478543764" expanded="true" signature="751:782" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="803:949" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="961:1643" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="989:1577" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1121:1222" ph="{&quot;label&quot;: &quot;&quot;...}" />
+            <marker date="1508478543764" expanded="true" signature="1227:1323" ph="//..." />
+            <marker date="1508478543764" expanded="true" signature="1410:1530" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1427:1457" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1463:1525" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1601:1640" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -565,7 +592,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1508478543764" expanded="true" signature="344:722" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="354:719" ph="{&quot;property&quot;: datajson...}" />
+            <marker date="1508478543764" expanded="true" signature="531:715" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="545:710" ph="[...]" />
+            <marker date="1508478543764" expanded="true" signature="751:782" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="803:949" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="961:1643" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="989:1577" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1121:1222" ph="{&quot;label&quot;: &quot;&quot;...}" />
+            <marker date="1508478543764" expanded="true" signature="1227:1323" ph="//..." />
+            <marker date="1508478543764" expanded="true" signature="1410:1530" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1427:1457" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1463:1525" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1601:1640" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -756,31 +798,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/TestForm.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
+          <folding>
+            <marker date="1508478543764" expanded="true" signature="344:722" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="354:719" ph="{&quot;property&quot;: datajson...}" />
+            <marker date="1508478543764" expanded="true" signature="531:715" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="545:710" ph="[...]" />
+            <marker date="1508478543764" expanded="true" signature="751:782" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="803:949" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="961:1643" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="989:1577" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1121:1222" ph="{&quot;label&quot;: &quot;&quot;...}" />
+            <marker date="1508478543764" expanded="true" signature="1227:1323" ph="//..." />
+            <marker date="1508478543764" expanded="true" signature="1410:1530" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1427:1457" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1463:1525" ph="{...}" />
+            <marker date="1508478543764" expanded="true" signature="1601:1640" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/demojson/form.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="39" column="20" lean-forward="false" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="20" />
+        <state relative-caret-position="259">
+          <caret line="40" column="36" lean-forward="true" selection-start-line="40" selection-start-column="36" selection-end-line="40" selection-end-column="36" />
           <folding>
             <element signature="e#77#442#0" expanded="false" />
             <element signature="e#448#546#0" expanded="false" />
-            <element signature="e#877#1150#0" expanded="false" />
-            <element signature="e#1156#1239#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/BasicComponents.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1329">
-          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/TestForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-655">
-          <caret line="16" column="23" lean-forward="true" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+        <state relative-caret-position="0">
+          <caret line="48" column="2" lean-forward="true" selection-start-line="48" selection-start-column="2" selection-end-line="48" selection-end-column="2" />
           <folding />
         </state>
       </provider>

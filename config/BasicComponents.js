@@ -48,6 +48,11 @@ var base_radio = function (data) {
 	return template;
 };
 
+// 时间组件
+var base_datetime = function (data) {
+	return ' <el-date-picker v-model="' + data.model + '" type="' + data.type +'" format="'+data.format+'" placeholder="'+data.placeholder+'"></el-date-picker>';
+};
+
 //form组件
 var base_form=function(data){
 	var options=data.options;
@@ -74,5 +79,6 @@ var BasicComponents = {
 	textarea: base_textarea,
 	radio: base_radio,
 	form:base_form,
+	datetime:base_datetime,
 	checkbox:base_checkbox
 };

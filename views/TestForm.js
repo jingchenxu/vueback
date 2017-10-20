@@ -30,6 +30,9 @@ var TestForm = Vue.extend({
 			rules:{
 				region: [
 					{ required: true, message: '请选择活动区域', trigger: 'change' }
+				],
+				date1: [
+					{ type: 'date', required: true, message: '请选择日期', trigger: 'change' }
 				]
 			}
 		}
@@ -48,12 +51,12 @@ var TestForm = Vue.extend({
 			console.dir(val);
 			this.property.options[0].label = "hahaha";
 			this.property.options.push({
-					"label": "",
-					"type": "button",
-					"content": "取消",
-					"color": "",
-					"clickfn": ""
-				})
+				"label": "",
+				"type": "button",
+				"content": "取消",
+				"color": "",
+				"clickfn": ""
+			})
 			// console.log(this.property.options[0],this.property.rules)
 			// console.log(TestForm.options)
 			console.log(this.$data,this.$refs.form)
