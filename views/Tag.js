@@ -59,7 +59,7 @@ var Tag = Vue.extend({
             //console.log(this.$route);
             //console.log(this.$route.path);
             if (path === this.$route.path) {
-                return 'success';
+                return 'primary';
             } else {
                 if (pathArr.indexOf(this.$route.path) == -1) {
                     this.tags.push({name: this.$route.name, path: this.$route.path});
