@@ -1,65 +1,22 @@
 /**
  * Created by user on 2017/10/16.
  */
-
-console.log(BasicComponents);
-var property = {
-	ref: 'form',
-	model: 'form',
-	width: '100px',
-	options:[
-		{
-			label:'复选框',
-			model:[],
-			type:"checkbox",
-			children:[
-				{label:"1",name:""},
-				{label:"2",name:""},
-				{label:"3",name:""},
-				{label:"4",name:""}
-			]
-		},
-		{
-			label:"单选",
-			modal:"",
-			type:"radio",
-			children:[
-				{label:"1",name:""},
-				{label:"2",name:""},
-				{label:"4",name:""}
-			]
-		},
-		{
-			label:"input",
-			modal:[],
-			type:"input",
-			placeholder:"默认值"
-		},
-		{
-			label: '活动区域',
-			model: 'form.region',
-			type:"select",
-			placeholder: '请选择活动区域',
-			options: [
-				{
-					label: '区域一',
-					value: 'shanghai'
-				},
-				{
-					label: '区域二',
-					value: 'beijing'
-				}
-			]
-		}
-	]
-};
-var template=BasicComponents.form(property);
-console.log(template)
+var template = "<div>ceshiaaaaaaa</div>";
+var datajson;
+$.ajax({
+	url: "/vueback/demojson/form.json",
+	async:false,
+	success: function (data) {
+		datajson=data;
+		// template = BasicComponents.form(datajson);
+	}
+});
 var TestForm = Vue.extend({
 	template: template,
+	name:'TestForm',
 	data: function () {
 		return{
-			message: 'test vuex',
+			property: datajson,
 			form: {
 				name: '',
 				region: '',
@@ -69,7 +26,52 @@ var TestForm = Vue.extend({
 				type: [],
 				resource: '',
 				desc: ''
+			},
+			rules:{
+				region: [
+					{ required: true, message: '请选择活动区域', trigger: 'change' }
+				],
+				date1: [
+					{ type: 'date', required: true, message: '请选择日期', trigger: 'change' }
+				]
 			}
+		}
+	},
+	beforeCreate: function () {
+		// console.log(template)
+	},
+	created:function(){
+		// console.log(this.property,datajson)
+		TestForm.options.template = BasicComponents.form(this.property)
+		// console.log(TestForm.options)
+	},
+	methods: {
+		onSubmit: function(val) {
+			console.log('看看外部组件的输出'+val);
+			console.dir(val);
+			this.property.options[0].label = "hahaha";
+			this.property.options.push({
+				"label": "",
+				"type": "button",
+				"content": "取消",
+				"color": "",
+				"clickfn": ""
+			})
+			// console.log(this.property.options[0],this.property.rules)
+			// console.log(TestForm.options)
+			console.log(this.$data,this.$refs.form)
+			this.$refs.form.validate(function(valid){
+				if (valid) {
+					alert('submit!');
+				} else {
+					console.log('error submit!!');
+					return false;
+				}
+			});
+			// this.$message(AlertIfo.TEST_INFO);
+		},
+		resetForm:function(){
+			this.$refs.form.resetFields();
 		}
 	}
 });

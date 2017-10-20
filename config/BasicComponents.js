@@ -8,60 +8,24 @@ var base_input = function (data) {
 };
 
 // 这是一个基本的下拉选择框
-var base_select = function () {
-	var s = new Object();
-	s.property = {
-		label: '活动区域',
-		model: 'form.region',
-		placeholder: '请选择活动区域',
-		options: [
-			{
-				label: '区域一',
-				value: 'shanghai'
-			},
-			{
-				label: '区域二',
-				value: 'beijing'
-			}
-		]
-	};
-	s.start = function () {
-		var start = '  <el-form-item label="'+s.property.label+'">' +
-			'    <el-select v-model="form.region" placeholder="请选择活动区域">';
-		return start;
-	};
-	s.end = function () {
-		var end = '    </el-select>' +
-			'  </el-form-item>';
-		return end;
-	};
-	s.template = function () {
-		var template = s.start();
-		for(var i=0; i<s.property.options.length; i++) {
-			template += '<el-option label="'+s.property.options[i].label+'" value="'+s.property.options[i].value+'"></el-option>';
-		}
-		template += s.end();
-		return template;
-	};
-	return s;
+var base_select = function (data) {
+	var template = ' <el-select v-model="'+data.model+'" placeholder="'+data.placeholder+'">';
+	for(var j=0;j<data.children.length;j++){
+		template+='<el-option label="'+data.children[j].label+'" value="'+data.children[j].value+'"></el-option>';
+	}
+	template+='</el-select>';
+	return template;
 };
 
 
+// 这是一个button
+var base_button = function (data) {
+	return '<el-button type="'+data.color+'" @click="'+data.clickfn+'">'+data.content+'</el-button>' ;
+};
+
 // 这是一个基本的文字填写框
-var base_textarea = function () {
-	var t = {};
-	t.property = {
-		label: '活动形式',
-		type: 'textarea',
-		model: 'form.desc'
-	};
-	t.template = function () {
-		var template = '  <el-form-item label="'+t.property.label+'">' +
-			'    <el-input type="'+t.property.type+'" v-model="'+t.property.model+'"></el-input>' +
-			'  </el-form-item>';
-		return template;
-	};
-	return t;
+var base_textarea = function (data) {
+	return '<el-input type="'+data.type+'" v-model="'+data.model+'"></el-input>' ;
 };
 
 //CheckBox组件
@@ -74,23 +38,32 @@ var base_checkbox = function (data, template) {
 	return template;
 };
 
+// 这是一个基本的radio组件
+var base_radio = function (data) {
+	var template = ' <el-radio-group v-model="' + data.model + '">';
+	for (var j = 0; j < data.children.length; j++) {
+		template += '<el-radio label="' + data.children[j].label + '" value="' + data.children[j].value + '"></el-radio>';
+	}
+	template += '</el-radio-group>';
+	return template;
+};
+
+// 时间组件
+var base_datetime = function (data) {
+	return ' <el-date-picker v-model="' + data.model + '" type="' + data.type +'" format="'+data.format+'" placeholder="'+data.placeholder+'"></el-date-picker>';
+};
+
 //form组件
 var base_form=function(data){
 	var options=data.options;
-	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" label-width="'+data.width+'">';
+	var template='<el-form ref="'+data.ref+'" :model="'+data.model+'" :rules="'+data.rules+'" label-width="'+data.width+'">';
 	for(var i=0;i<options.length;i++){
 		if(options[i].type=="checkbox"){
 			template+='<el-form-item label="'+options[i].label+'">';
 			var resulttemplate = eval("base_" + options[i].type +"(options[i],template);");
 			template = resulttemplate+'</el-form-item>';
-		}
-		if(options[i].type=="input"){
-			template+='<el-form-item label="'+options[i].label+'">';
-			var template1=eval("base_"+options[i].type+"(options[i]);");
-			template =template+template1+'</el-form-item>';
-		}
-		if(options[i].type=="input"){
-			template+='<el-form-item label="'+options[i].label+'">';
+		}else{
+			template += '<el-form-item label="' + options[i].label + '" prop = "'+options[i].prop + '">';
 			var template1=eval("base_"+options[i].type+"(options[i]);");
 			template =template+template1+'</el-form-item>';
 		}
@@ -102,7 +75,10 @@ var base_form=function(data){
 var BasicComponents = {
 	input: base_input,
 	select: base_select,
+	button:base_button,
 	textarea: base_textarea,
+	radio: base_radio,
 	form:base_form,
+	datetime:base_datetime,
 	checkbox:base_checkbox
 };
